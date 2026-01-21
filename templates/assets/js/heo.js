@@ -329,14 +329,18 @@ var heo = {
 
     //显示加载动画
     showLoading: function () {
-        document.querySelector("#loading-box").classList.remove("loaded");
+        const loadingBox = document.querySelector("#loading-box");
+        if (!loadingBox) return;
+        loadingBox.classList.remove("loaded");
         let cardColor = getComputedStyle(document.documentElement).getPropertyValue('--heo-card-bg');
         heo.changeThemeColor(cardColor);
     },
 
     //隐藏加载动画
     hideLoading: function () {
-        document.querySelector("#loading-box").classList.add("loaded");
+        const loadingBox = document.querySelector("#loading-box");
+        if (!loadingBox) return;
+        loadingBox.classList.add("loaded");
     },
 
     //切换音乐播放状态
